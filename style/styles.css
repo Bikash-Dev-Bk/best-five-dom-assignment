@@ -1,0 +1,20 @@
+/* --------------------------------------
+                   fonts
+---------------------------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Berkshire+Swash&display=swap');
+
+.banner{
+    height: 70vh;
+    padding-top: 20vh;
+    background-color: black;
+}
+.banner-Title{
+    font-size: 5rem;
+    color: #FF5E19;
+    font-family: 'Berkshire Swash', cursive;
+}
+.banner-text{
+    font-size: 1.5rem;
+    color: white;
+}
