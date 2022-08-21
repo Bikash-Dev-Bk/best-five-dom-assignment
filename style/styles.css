@@ -4,6 +4,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Berkshire+Swash&display=swap');
 
+
+/* --------------------------------------
+                   banner
+---------------------------------------- */
 .banner{
     height: 70vh;
     padding-top: 20vh;
@@ -17,4 +21,16 @@
 .banner-text{
     font-size: 1.5rem;
     color: white;
+}
+
+
+
+/* --------------------------------------
+                   footer
+---------------------------------------- */
+footer{
+    background-color: black;
+    color: white;
+    text-align: center;
+    height: 20vh;
 }
