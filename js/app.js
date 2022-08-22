@@ -12,41 +12,19 @@ function getPlayerNameById(playerNameId){
 
 // players select button click
 
-document.getElementById('btn-messi').addEventListener('click', function(){
-    const playerMessi = getPlayerNameById('player-messi');
-})
-
-document.getElementById('btn-neymar').addEventListener('click', function(){
-    const playerMessi = getPlayerNameById('player-neymar');
-})
-
-document.getElementById('btn-kimpembe').addEventListener('click', function(){
-    const playerMessi = getPlayerNameById('player-kimpembe');
-})
-
-document.getElementById('btn-ramos').addEventListener('click', function(){
-    const playerMessi = getPlayerNameById('player-ramos');
-})
-
-document.getElementById('btn-marquinhos').addEventListener('click', function(){
-    const playerMessi = getPlayerNameById('player-marquinhos');
-})
-
-document.getElementById('btn-verratti').addEventListener('click', function(){
-    const playerMessi = getPlayerNameById('player-verratti');
-})
+function getPlayerBtnAndNameById(button, name){
+    document.getElementById(button).addEventListener('click', function(){
+        const playerName = getPlayerNameById(name);
+    })
+}
 
 
-
-
-
-
-
-
-
-
-
-
+getPlayerBtnAndNameById('btn-messi', 'player-messi');
+getPlayerBtnAndNameById('btn-neymar', 'player-neymar');
+getPlayerBtnAndNameById('btn-kimpembe', 'player-kimpembe');
+getPlayerBtnAndNameById('btn-ramos', 'player-ramos');
+getPlayerBtnAndNameById('btn-marquinhos', 'player-marquinhos');
+getPlayerBtnAndNameById('btn-verratti', 'player-verratti');
 
 
 
