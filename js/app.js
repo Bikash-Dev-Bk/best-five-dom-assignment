@@ -5,10 +5,20 @@ function getPlayerNameById(playerNameId){
     const listContainer = document.getElementById('list-container');
     const li = document.createElement("li");
 
-    const playerName = document.getElementById(playerNameId);
-    const playerNameValue = playerName.innerText;
-    li.innerText = playerNameValue;
-    listContainer.appendChild(li);
+    const select = document.querySelector('#list-container');
+    const inner = select.querySelectorAll('li');
+    const length = inner.length;
+
+    if(length == 5){
+        alert('You can not select more than 5 player!');
+        return;
+    }
+    else{
+        const playerName = document.getElementById(playerNameId);
+        const playerNameValue = playerName.innerText;
+        li.innerText = playerNameValue;
+        listContainer.appendChild(li);
+    }
 }
 
 // Disable Button Function
@@ -18,44 +28,27 @@ function disableButton(buttonId) {
 }
 
 
-// players select button click
+// players select button function
 
-function getPlayerBtnAndNameById(buttonId, nameId){
+function setPlayerBtnAndNameById(buttonId, nameId){
     document.getElementById(buttonId).addEventListener('click', function(){
         getPlayerNameById(nameId);
         disableButton(buttonId);
     })
 }
 
-// call function getPlayerBtnAndNameById 
+// call getPlayerBtnAndNameById  function 
 
-getPlayerBtnAndNameById('btn-messi', 'player-messi');
-getPlayerBtnAndNameById('btn-neymar', 'player-neymar');
-getPlayerBtnAndNameById('btn-kimpembe', 'player-kimpembe');
-getPlayerBtnAndNameById('btn-ramos', 'player-ramos');
-getPlayerBtnAndNameById('btn-marquinhos', 'player-marquinhos');
-getPlayerBtnAndNameById('btn-verratti', 'player-verratti');
-
-
+setPlayerBtnAndNameById('btn-messi', 'player-messi');
+setPlayerBtnAndNameById('btn-neymar', 'player-neymar');
+setPlayerBtnAndNameById('btn-kimpembe', 'player-kimpembe');
+setPlayerBtnAndNameById('btn-ramos', 'player-ramos');
+setPlayerBtnAndNameById('btn-marquinhos', 'player-marquinhos');
+setPlayerBtnAndNameById('btn-verratti', 'player-verratti');
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// total Amount calaculate
+// input Field Value function
 
 function inputFieldValueById(inputFieldId){
     const inputValue = document.getElementById(inputFieldId);
@@ -67,6 +60,22 @@ function inputFieldValueById(inputFieldId){
 
 
 // calculate button
+
+document.getElementById('btn-calculate').addEventListener('click', function(){
+    const select = document.querySelector('#list-container');
+    const inner = select.querySelectorAll('li');
+    const length = inner.length;
+
+    const perPlayerAmount = inputFieldValueById('per-player-field');
+
+    const totalplayerExpenses = perPlayerAmount * length;
+    
+    const playerExpenses = document.getElementById('player-expenses');
+    playerExpenses.innerText = totalplayerExpenses;
+})
+
+
+// calculate total button
 
 document.getElementById('btn-calculate-total').addEventListener('click', function(){
     const playerExpenses = document.getElementById('player-expenses');
