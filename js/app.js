@@ -1,4 +1,6 @@
 
+// Player name function
+
 function getPlayerNameById(playerNameId){
     const listContainer = document.getElementById('list-container');
     const li = document.createElement("li");
@@ -9,15 +11,23 @@ function getPlayerNameById(playerNameId){
     listContainer.appendChild(li);
 }
 
+// Disable Button Function
+
+function disableButton(buttonId) {
+    document.getElementById(buttonId).disabled = 'true';
+}
+
 
 // players select button click
 
-function getPlayerBtnAndNameById(button, name){
-    document.getElementById(button).addEventListener('click', function(){
-        const playerName = getPlayerNameById(name);
+function getPlayerBtnAndNameById(buttonId, nameId){
+    document.getElementById(buttonId).addEventListener('click', function(){
+        getPlayerNameById(nameId);
+        disableButton(buttonId);
     })
 }
 
+// call function getPlayerBtnAndNameById 
 
 getPlayerBtnAndNameById('btn-messi', 'player-messi');
 getPlayerBtnAndNameById('btn-neymar', 'player-neymar');
@@ -56,6 +66,7 @@ function inputFieldValueById(inputFieldId){
 }
 
 
+// calculate button
 
 document.getElementById('btn-calculate-total').addEventListener('click', function(){
     const playerExpenses = document.getElementById('player-expenses');
