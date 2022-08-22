@@ -1,4 +1,3 @@
-
 // Player name function
 
 function getPlayerNameById(playerNameId){
@@ -58,7 +57,13 @@ function inputFieldValueById(inputFieldId){
     const inputValueString = inputValue.value;
     const inputValueAmount = parseInt(inputValueString);
 
-    return inputValueAmount;
+    if(isNaN(inputValueAmount)){
+        alert('please put a number');
+        return;
+    }
+    else{
+        return inputValueAmount;
+    }
 }
 
 
