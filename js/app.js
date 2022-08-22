@@ -11,7 +11,7 @@ function getPlayerNameById(playerNameId){
 
     if(length == 5){
         alert('You can not select more than 5 player!');
-        return;
+        return false;
     }
     else{
         const playerName = document.getElementById(playerNameId);
@@ -19,6 +19,7 @@ function getPlayerNameById(playerNameId){
         li.innerText = playerNameValue;
         listContainer.appendChild(li);
     }
+    return true;
 }
 
 // Disable Button Function
@@ -32,8 +33,10 @@ function disableButton(buttonId) {
 
 function setPlayerBtnAndNameById(buttonId, nameId){
     document.getElementById(buttonId).addEventListener('click', function(){
-        getPlayerNameById(nameId);
-        disableButton(buttonId);
+        const isDisable = getPlayerNameById(nameId);
+        if(isDisable){
+            disableButton(buttonId);
+        }
     })
 }
 
